@@ -34,9 +34,6 @@ class Authentication_helper_2:
         Authentication_helper_2.resp = self.req_sessionId().json()
         #Authentication_helper_2.ses_id = self.req_sessionId.json
 
-    def get_ses_id(self):
-        return Authentication_helper_2.resp[]
-
     def req_get_code(self):
         pass
 

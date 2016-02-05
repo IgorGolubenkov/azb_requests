@@ -141,12 +141,33 @@ print("\nStatus_user_me:", user_me.status_code)
 print("Json_user_me:", user_me.json())
 #print("Headers_user_me:", user_me.headers)
 
+'''
+accounts_body = {
+    'isOrganization': False,
+    'name': 'Игорь Тест 2',
+    'isOrganization': True,
+    'organizationDetails': {
+        'uniqNumber': '14-546-84926',
+        'country': 'Россия',
+        'city': 'Самара'
+        },
+    'admins': ['569cd7c7cc5d97c115a77c39'],
+    'name': 'Школа Игоря'
+    }
+
 url_userme_accounts = '%susers/me/accounts' % base_url
-userme_accounts = requests.get(url_userme_accounts, headers=secured_headers, verify=False)
+userme_accounts = requests.post(url_userme_accounts, json=accounts_body, headers=secured_headers, verify=False)
 print("\nStatususerme_accounts:", userme_accounts.status_code)
 print("Json_userme_accountst:", userme_accounts.json())
 #print("Headers_userme_get:", userme_get.headers)
+'''
 
+base_url = 'https://ds.test.cognita.ru/api/'
+url_bundle = '%sbundles' % base_url
+bundle = requests.get(url=url_bundle, headers=secured_headers, verify=False)
+print("\nStatus_url_bundle:", url_bundle.status_code)
+print("Json_url_bundle:", url_bundle.json())
+#print("Headers_url_bundle:", url_bundle.headers)
 
 def tampletes_post():
     url_some = '%s"url"' % base_url
